@@ -101,8 +101,7 @@ This game is very simple, the objective for the player is the keep the ball boun
 
 
 ### Trello
-[Link url]
-
+https://trello.com/b/CMGPw8J9
 
 ### Git
 URls for the project repo and deploy
