@@ -5,11 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Game</title>
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
   <script src="./src/main.js"></script>
-  <script src="./src/Game.js"></script>
-  <script src="./src/ball.js"></script>
+  <script src="./src/game.js"></script>
+  <script src="./src/player.js"></script>
+  <script src="./src/enemies.js"></script>
 </body>
 </html>
+
+
+// Create an array that contains objects that you want to save in the localStorage
+
+/* 
+*/
+
+const score = [
+  { name: 'Anna', score: 4120 },
+  { name: 'Bob', score: 1245 },
+  { name: 'Sarah', score: 5699 },
+  { name: 'Marc', score: 3452 },
+];
+
+// Stringify the data before storing in localStorage
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify
+
+const scoreStringified = JSON.stringify(score);
+
+// Save the data to the localStorage
+// https://developer.mozilla.org/en-US/docs/Web/API/Storage/setItem
+
+localStorage.setItem('score', scoreStringified);
+
+// Retrieve the stored data from local storage
+//  https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem
+
+const retrieved = localStorage.getItem('score');
+console.log('retrieved', retrieved);
+
+const scoreParsed = JSON.parse(retrieved);
+
+console.log(scoreParsed);
+
+scoreParsed.push({ name: 'Uros', score: 0 });
+
+// Parse the data back into an object/array
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse
+
+const stringifiedAgain = JSON.stringify(scoreParsed);
+localStorage.setItem('score', stringifiedAgain);
+
+// Insert the new score into the array retrieved from the localStorage
+//  name: 'Emma', score: 6701
+
+// Stringify the updated array and save it back in the localStorage
+
+// retreive the updated array from the local storage, to check if the previous step was done right

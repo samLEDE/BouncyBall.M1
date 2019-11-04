@@ -1,3 +1,4 @@
+'use strict'
 function buildDom(htmlString) {
     const div = document.createElement('div');
     div.innerHTML = htmlString;
@@ -11,7 +12,7 @@ function buildDom(htmlString) {
     function createSplashScreen() {
       splashScreen = buildDom(`
        <main>
-        <h1>Game Title</h1>
+        <h1>Make it rain</h1>
         <button>Start Game</button>
        </main>
       `);
@@ -31,10 +32,22 @@ function buildDom(htmlString) {
     function createGameScreen() {
       var gameScreen = buildDom(`
         <main class="game">
-          <span>Score: </span><span id="score">0</span>
-          <section class="canvas-container">
-            <canvas></canvas>
-          </section>
+        <div class="lives">
+        <span class="label">Lives:</span>
+        <span class="value"></span>
+      </div>
+      <div class="score">
+        <span class="label">Score:</span>
+        <span class="value"></span>
+      </div>
+        <div class="High-score">
+        <span class="label">HighScore:</span>
+        <span class="value"></span>
+      </div>
+    </header>
+    <div class="canvas-container">
+      <canvas></canvas>
+    </div>
         </main>
      `);
   
