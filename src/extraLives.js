@@ -1,6 +1,6 @@
 'use strict';
 
-function extraPoint(canvas, x, speed) {
+function extraLife(canvas, x, speed) {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
   this.size = 20;
@@ -10,17 +10,17 @@ function extraPoint(canvas, x, speed) {
   this.speed = speed;
 }
 
-extraPoint.prototype.draw = function() {
+extraLife.prototype.draw = function() {
   this.ctx.fillStyle = '#000000';
   // fillRect(x, y, width, height)
   this.ctx.fillRect(this.x, this.y, this.size, this.size);
 };
 
-extraPoint.prototype.updatePosition = function() {
+extraLife.prototype.updatePosition = function() {
   this.y = this.y + this.speed;
 };
 
-extraPoint.prototype.isInsideScreen = function() {
+extraLife.prototype.isInsideScreen = function() {
   // if x plus half of its size is smaller then 0 return
   return this.y + this.size / 2 > 0;
 };

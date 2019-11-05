@@ -11,9 +11,19 @@ function buildDom(htmlString) {
   
     function createSplashScreen() {
       splashScreen = buildDom(`
-       <main>
-        <h1>Make it rain</h1>
-        <button>Start Game</button>
+       <main class="startScreen">
+
+          <img src="./titleSplashScreen.png">
+
+            <button id="btn-start"><img src="./startGame-img.png"></button>
+              <p>Instructions</p>
+              <div class="arrow-btns">
+
+                <img src"./arrow-left.png">
+                <p>&</p>
+                <img src"./arrow-right.png">
+
+              </div>
        </main>
       `);
   
@@ -32,6 +42,7 @@ function buildDom(htmlString) {
     function createGameScreen() {
       var gameScreen = buildDom(`
         <main class="game">
+        <div class="div-container">
         <div class="lives">
         <span class="label">Lives:</span>
         <span class="value"></span>
@@ -47,7 +58,8 @@ function buildDom(htmlString) {
     </header>
     <div class="canvas-container">
       <canvas></canvas>
-    </div>
+      </div>
+      </div>
         </main>
      `);
   

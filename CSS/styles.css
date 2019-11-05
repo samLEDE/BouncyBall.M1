@@ -1,17 +1,23 @@
 html, body {
     height: 100%;
   }
-  
+
+body {
+  background-image: url(../1.jpg);
+  background-size: cover;
+}
   .game {
+    color: white;
     text-align: center;
     display: flex;
     justify-content: center;
-    align-content: column;
+    align-content: row;
     height: 100%;
     width: 100%;
   }
 
   .canvas-container {
+    margin-top: 100px;
     height: 600px;
     width: 400px;
     margin: 0, 20px;
@@ -19,5 +25,33 @@ html, body {
     border: solid red;
     border-width: 1px;
   }
-  
- 
+  canvas {
+    background-image: grey;
+    background-size: cover;
+  }
+
+  .div-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .startScreen {
+    display: flex;
+    color: white;
+    align-items: center;
+    flex-direction: column;
+    background: grey;
+    padding-top: 100px;
+    height: 100%;
+    width: 100%;
+  }
+  .startScreen #btn-start {
+    margin-top: 50px;
+  }
+
+  .arrow-btns {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
