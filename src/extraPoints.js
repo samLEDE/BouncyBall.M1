@@ -11,10 +11,18 @@ function extraPoint(canvas, x, speed) {
 }
 
 extraPoint.prototype.draw = function() {
-  this.ctx.fillStyle = '#000000';
-  // fillRect(x, y, width, height)
-  this.ctx.fillRect(this.x, this.y, this.size, this.size);
+
+    var img3= new Image();
+    img3.src="../Images/goldcoin.png"
+  this.ctx.drawImage(img3, this.x, this.y, this.size, this.size);
+
+
+//   this.ctx.fillStyle = '#ff1a1a';
+//   // fillRect(x, y, width, height)
+//   this.ctx.fillRect(this.x, this.y, this.size, this.size);
 };
+
+
 
 extraPoint.prototype.updatePosition = function() {
   this.y = this.y + this.speed;

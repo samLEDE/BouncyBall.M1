@@ -10,10 +10,15 @@ function extraLife(canvas, x, speed) {
   this.speed = speed;
 }
 
+
 extraLife.prototype.draw = function() {
-  this.ctx.fillStyle = '#000000';
-  // fillRect(x, y, width, height)
-  this.ctx.fillRect(this.x, this.y, this.size, this.size);
+    var img1= new Image();
+    img1.src="../Images/extraLive.png"
+  this.ctx.drawImage(img1, this.x, this.y, this.size, this.size);
+  
+//   fillStyle = '#000000';
+//   // fillRect(x, y, width, height)
+//   this.ctx.fillRect(this.x, this.y, this.size, this.size);
 };
 
 extraLife.prototype.updatePosition = function() {

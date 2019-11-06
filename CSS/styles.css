@@ -3,7 +3,7 @@ html, body {
   }
 
 body {
-  background-image: url(../1.jpg);
+  background-image: url(../images/1.jpg);
   background-size: cover;
 }
   .game {
@@ -17,13 +17,14 @@ body {
   }
 
   .canvas-container {
+      /* background-image: url(../images/2.jpg); */
     margin-top: 100px;
     height: 600px;
     width: 400px;
     margin: 0, 20px;
     background: grey;
     border: solid red;
-    border-width: 1px;
+    border-width: 4px;
   }
   canvas {
     background-image: grey;
@@ -42,16 +43,24 @@ body {
     align-items: center;
     flex-direction: column;
     background: grey;
-    padding-top: 100px;
+    padding-top: 50px;
     height: 100%;
     width: 100%;
   }
   .startScreen #btn-start {
-    margin-top: 50px;
+    margin-top: 100px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
   }
 
-  .arrow-btns {
+  #Instructions {
+    margin-top: 100px;
+  }
+
+  .startScreen #InstructionArrows {
+    margin-top: 50px;
     display: flex;
     align-items: center;
-    flex-direction: row;
+
   }

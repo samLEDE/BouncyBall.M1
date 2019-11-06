@@ -4,14 +4,14 @@ function Game() {
   this.ctx = null;
   this.enemies = [];
   this.bonusLives = [];
+  this.bonusPoint = [];
   this.player = null;
   this.gameIsOver = false;
   this.gameScreen = null;
-  this.score = 0;
   this.highScore = 0;
   this.direction = 10;
   this.startLives = 3;
-  this.startScore = 0
+  this.startScore = 0;
 }
 
 Game.prototype.start = function() {
@@ -83,14 +83,13 @@ Game.prototype.startLoop = function() {
       this.bonusLives.push(newLife);
     }
 
-      // //create new points --> done 
-      // if (Math.random() > 0.999) {
-      //   var randomX = (this.canvas.width - 20)  * Math.random();
-      //   var newPoint = new extraPoint(this.canvas, randomX, 5);
-      //   this.bonusPoint.push(newPoint);
-      // }
+                  //create new points --> done 
+                  if (Math.random() > 0.95) {
+                    var randomX = (this.canvas.width - 20)  * Math.random();
+                    var newPoint = new extraPoint(this.canvas, randomX, 5);
+                    this.bonusPoint.push(newPoint);
+                  }
 
-    // When I add this the player disapears 
     this.checkCollisions() 
     this.player.handleScreenCollision();
 
@@ -104,11 +103,11 @@ Game.prototype.startLoop = function() {
       return extraLife.isInsideScreen();
     });
 
-    // // --> done 
-    // this.bonusPoint = this.bonusPoint.filter(function(extraPoint) {
-    //   extraPoint.updatePosition();
-    //   return extraPoint.isInsideScreen();
-    // });
+    // --> done 
+    this.bonusPoint = this.bonusPoint.filter(function(extraPoint) {
+    extraPoint.updatePosition();
+    return extraPoint.isInsideScreen();
+     });
 
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     this.player.draw();
@@ -123,10 +122,10 @@ Game.prototype.startLoop = function() {
       item.draw();
     });
 
-    // // //draw newPonts --> done 
-    // this.bonusPoint.forEach(function(item) {
-    //   item.draw();
-    // });
+      //draw newPonts --> done
+      this.bonusPoint.forEach(function(item) {
+      item.draw();
+      });
 
     //terminate if game is over (player has died)
     if (!this.gameIsOver) {
@@ -140,7 +139,6 @@ Game.prototype.checkCollisions = function() {
   this.enemies.forEach(function(element) {
     if (this.player.didCollide(element)) {
       this.player.removeLife();
-
       this.livesElement.innerHTML = this.player.lives;
       element.x = 0 - element.size;
     
@@ -166,15 +164,17 @@ Game.prototype.checkCollisions = function() {
       }, this);
 
 
-      //     //--> done 
-      // this.bonusPoint.forEach(function(extraPoint) {
-      //   if (this.player.didCollide(extraPoint)) {
-      //     this.player.addPoint() 
-    
-      //     this.scoreElement.innerHTML = this.player.score
-      //     extraPoint.x = 0 - extraPoint.size;
-      //     }
-      //     }, this);
+                      //--> done 
+      this.bonusPoint.forEach(function(extraPoint) {
+        if (this.player.didCollide(extraPoint)) {
+        this.player.addPoint() 
+                      
+        this.scoreElement.innerHTML = this.player.score
+        extraPoint.x = 0 - extraPoint.size;
+        }
+        }, this);
+
+        
 
 
 };

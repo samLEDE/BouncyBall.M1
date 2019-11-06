@@ -13,19 +13,18 @@ function buildDom(htmlString) {
       splashScreen = buildDom(`
        <main class="startScreen">
 
-          <img src="./titleSplashScreen.png">
+          <img src="./images/spashScreenImage.png">
 
-            <button id="btn-start"><img src="./startGame-img.png"></button>
-              <p>Instructions</p>
-              <div class="arrow-btns">
-
-                <img src"./arrow-left.png">
-                <p>&</p>
-                <img src"./arrow-right.png">
-
+            <button id="btn-start">
+            <img src="./images/new-startbutton.png">
+            </button>
+            <img id="Instructions" src="./images/Instructions2.0.png">
+              <div id="InstructionArrows">
+                <img id="left" src="./images/arrows2.png">
               </div>
        </main>
       `);
+      // <img src="./images/instructions.png> use this for instructions 
   
       document.body.appendChild(splashScreen);
   
@@ -51,10 +50,7 @@ function buildDom(htmlString) {
         <span class="label">Score:</span>
         <span class="value"></span>
       </div>
-        <div class="High-score">
-        <span class="label">HighScore:</span>
-        <span class="value"></span>
-      </div>
+
     </header>
     <div class="canvas-container">
       <canvas></canvas>
