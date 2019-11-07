@@ -11,7 +11,8 @@ function Game() {
   this.highScore = 0;
   this.direction = 10;
   this.startLives = 3;
-  this.startScore = 0;
+  // this.startScore = 0;
+  this.score = 0;
 }
 
 Game.prototype.start = function() {
@@ -33,9 +34,9 @@ Game.prototype.start = function() {
   this.canvas.setAttribute('height', this.containerHeight);
 
   // Create new player
-  this.player = new Player(this.canvas, this.startLives, this.startScore);		//	<-- UPDATE
+  this.player = new Player(this.canvas, this.startLives);		//	<-- UPDATE
   this.livesElement.innerHTML = this.startLives;
-  this.scoreElement.innerHTML = this.startScore;
+  // this.scoreElement.innerHTML = this.score;
   //console.log("player:", this.player)
 
 
@@ -68,7 +69,6 @@ document.body.addEventListener(
 Game.prototype.startLoop = function() {
   var loop = function() {
     // console.log('game has started');
-
     //create new enemies 
     if (Math.random() > 0.98) {
       var randomX = (this.canvas.width - 20)  * Math.random();
@@ -127,6 +127,9 @@ Game.prototype.startLoop = function() {
       item.draw();
       });
 
+    this.scoreElement.innerHTML = this.score;
+
+
     //terminate if game is over (player has died)
     if (!this.gameIsOver) {
       window.requestAnimationFrame(loop);
@@ -167,7 +170,8 @@ Game.prototype.checkCollisions = function() {
                       //--> done 
       this.bonusPoint.forEach(function(extraPoint) {
         if (this.player.didCollide(extraPoint)) {
-        this.player.addPoint() 
+          console.log(this)
+        this.addPoint() 
                       
         this.scoreElement.innerHTML = this.player.score
         extraPoint.x = 0 - extraPoint.size;
@@ -177,6 +181,12 @@ Game.prototype.checkCollisions = function() {
         
 
 
+};
+
+Game.prototype.addPoint = function() {
+  this.score += 1;
+  console.log(this.score)
+  return this.score;
 };
 
 

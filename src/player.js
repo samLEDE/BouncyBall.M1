@@ -1,14 +1,14 @@
 'use strict'
 
 
-function Player(canvas, lives, score) {
+function Player(canvas, lives) {
     this.canvas = canvas;
     this.ctx = this.canvas.getContext('2d');
     this.speed = 40;
     this.width = 70;
     this.height = 15;
     this.lives = lives;
-    this.score = score;
+    // this.score = score;
     this.x = canvas.width / 2;
     this.y = 550;
   }
@@ -80,9 +80,10 @@ Player.prototype.addLife = function() {
 };
 
  // add point to player
-Player.prototype.addPoint = function() {
-  this.score += 1;
-};
+// Player.prototype.addPoint = function() {
+//   this.score += 1;
+//   return this.score;
+// };
   
 
   Player.prototype.draw = function() {

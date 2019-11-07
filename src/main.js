@@ -81,7 +81,7 @@ function buildDom(htmlString) {
             <img src="./images/gameOver.png" id = "GOimage">  
           </div>
           <div class="score">
-            <span class="label">Score:</span>
+            <span class="label"> <img src="./images/GOScore.png"></span>
             <span class="value"></span>
           </div>
           <div>
@@ -101,7 +101,8 @@ function buildDom(htmlString) {
       document.body.classList.add('gameOverScreen');
 
       let span = document.body.querySelector('.value');
-      span.innerText = playerScore;
+      span.innerText = game.score;
+      console.log(span.innerText)
 
       var startButton = gameOverScreen.querySelector('button');
       startButton.addEventListener('click', function() {
@@ -125,7 +126,7 @@ function buildDom(htmlString) {
       game.start();
 
       game.passGameOverCallback(function() {
-        gameOver(game.startScore);      
+        gameOver(game.score);      
       })
     }
 
