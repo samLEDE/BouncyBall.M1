@@ -3,7 +3,7 @@
 function extraLife(canvas, x, speed) {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
-  this.size = 20;
+  this.size = 30;
   //appears when completely inside the screen 
   this.x = x
   this.y = 0;

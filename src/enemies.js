@@ -3,7 +3,7 @@
 function element(canvas, x, speed) {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
-  this.size = 20;
+  this.size = 50;
   //appears when completely inside the screen 
   this.x = x
   this.y = 0;

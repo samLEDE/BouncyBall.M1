@@ -1,11 +1,52 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 html, body {
     height: 100%;
   }
 
-body {
-  background-image: url(../images/1.jpg);
-  background-size: cover;
-}
   .game {
     color: white;
     text-align: center;
@@ -17,8 +58,7 @@ body {
   }
 
   .canvas-container {
-      /* background-image: url(../images/2.jpg); */
-    margin-top: 100px;
+    margin-top: 50px;
     height: 600px;
     width: 400px;
     margin: 0, 20px;
@@ -26,6 +66,7 @@ body {
     border: solid red;
     border-width: 4px;
   }
+
   canvas {
     background-image: grey;
     background-size: cover;
@@ -35,6 +76,16 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  .score {
+    font-size: 20px;
+  }
+
+  .lives{
+    font-size: 20px;
+
+  
   }
 
   .startScreen {
@@ -62,5 +113,57 @@ body {
     margin-top: 50px;
     display: flex;
     align-items: center;
+  }
+
+.gameOverScreen  {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: grey;
+    font-size: 65px; 
+    color: black;
+    width: 100%;
+    height: 100%;
+   
+  }
+
+  #GOimage {
+    padding-top: 50px;
+  }
+  
+  #GOScore {
+    padding-top: 100px;
 
   }
+
+  #coinPile {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    margin-top: 425px;
+  }
+
+ #snake {
+   display: flex;
+   align-items: center;
+   position: absolute;
+   margin-top: 375px;
+
+ }
+
+  #GOstartbtn {
+    padding-top: 100px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+  }
+
+.moneybackground {
+  background-image: url(../images/1.jpg);
+  background-size: cover;
+}
+
+
+
+
+

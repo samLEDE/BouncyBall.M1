@@ -41,7 +41,7 @@ Player.prototype.handleScreenCollision = function() {
 
 
 Player.prototype.didCollide = function(element) {
-  console.log(element)
+  //console.log(element)
   var playerLeft = this.x;
   var playerRight = this.x + this.width;
   var playerTop = this.y;

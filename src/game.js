@@ -36,7 +36,7 @@ Game.prototype.start = function() {
   this.player = new Player(this.canvas, this.startLives, this.startScore);		//	<-- UPDATE
   this.livesElement.innerHTML = this.startLives;
   this.scoreElement.innerHTML = this.startScore;
-  console.log("player:", this.player)
+  //console.log("player:", this.player)
 
 
 

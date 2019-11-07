@@ -3,7 +3,7 @@
 function extraPoint(canvas, x, speed) {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
-  this.size = 20;
+  this.size = 30;
   //appears when completely inside the screen 
   this.x = x
   this.y = 0;
@@ -11,7 +11,6 @@ function extraPoint(canvas, x, speed) {
 }
 
 extraPoint.prototype.draw = function() {
-
     var img3= new Image();
     img3.src="../Images/goldcoin.png"
   this.ctx.drawImage(img3, this.x, this.y, this.size, this.size);

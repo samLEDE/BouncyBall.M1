@@ -8,6 +8,10 @@ function buildDom(htmlString) {
   
   function main() {
     var splashScreen;
+    var game;
+    var gameOverScreen;
+    var playerScore;
+    
   
     function createSplashScreen() {
       splashScreen = buildDom(`
@@ -27,6 +31,8 @@ function buildDom(htmlString) {
       // <img src="./images/instructions.png> use this for instructions 
   
       document.body.appendChild(splashScreen);
+
+      document.body.classList.add('moneybackground')
   
       var startButton = splashScreen.querySelector('button');
       startButton.addEventListener('click', function() {
@@ -63,14 +69,71 @@ function buildDom(htmlString) {
   
       return gameScreen;
     }
+    function removeGameScreen() {
+      game.removeGameScreen();
+    }
+
+    function createGameOverScreen(score) {
+      document.body.classList.remove('moneybackground');
+      gameOverScreen = buildDom(`
+      <main class="gameOverScreen">
+          <div>
+            <img src="./images/gameOver.png" id = "GOimage">  
+          </div>
+          <div class="score">
+            <span class="label">Score:</span>
+            <span class="value"></span>
+          </div>
+          <div>
+            <button id="GOstartbtn">
+              <img src="./images/playAgain.png" >
+            </button>      
+          </div>
+          <div id="coinPile"> 
+          <img src="./images/coinPile.png">
+          </div>
+          <div id="snake"> 
+          <img src="./images/enemy.png">
+        </div>
+      </main>
+      `)
+      document.body.appendChild(gameOverScreen);
+      document.body.classList.add('gameOverScreen');
+
+      let span = document.body.querySelector('.value');
+      span.innerText = playerScore;
+
+      var startButton = gameOverScreen.querySelector('button');
+      startButton.addEventListener('click', function() {
+        startGame();
+      });
+    }
+  function removeGameOverScreen(){
+    if(gameOverScreen) {
+      gameOverScreen.remove();
+    }
+  }
   
     function startGame() {
       removeSplashScreen();
+      removeGameOverScreen();
   
-      var game = new Game();
+      game = new Game();
       game.gameScreen = createGameScreen();
   
+      document.body.classList.add('moneybackground');
       game.start();
+
+      game.passGameOverCallback(function() {
+        gameOver(game.startScore);      
+      })
+    }
+
+
+    function gameOver(score) {
+
+      removeGameScreen();
+      createGameOverScreen(score);
     }
   
     createSplashScreen();
