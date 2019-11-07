@@ -17,18 +17,18 @@ function buildDom(htmlString) {
       splashScreen = buildDom(`
        <main class="startScreen">
 
-          <img src="./images/spashScreenImage.png">
+          <img src="./img/spashScreenImage.png">
 
             <button id="btn-start">
-            <img src="./images/new-startbutton.png">
+            <img src="./img/new-startbutton.png">
             </button>
-            <img id="Instructions" src="./images/Instructions2.0.png">
+            <img id="Instructions" src="./img/Instructions2.0.png">
               <div id="InstructionArrows">
-                <img id="left" src="./images/arrows2.png">
+                <img id="left" src="./img/arrows2.png">
               </div>
        </main>
       `);
-      // <img src="./images/instructions.png> use this for instructions 
+      // <img src="./img/instructions.png> use this for instructions 
   
       document.body.appendChild(splashScreen);
 
@@ -78,22 +78,22 @@ function buildDom(htmlString) {
       gameOverScreen = buildDom(`
       <main class="gameOverScreen">
           <div>
-            <img src="./images/gameOver.png" id = "GOimage">  
+            <img src="./img/gameOver.png" id ="GOimage">  
           </div>
           <div class="score">
-            <span class="label"> <img src="./images/GOScore.png"></span>
-            <span class="value"></span>
+            <span class="label"> <img id="GOscore"src="./img/GOScore.png"></span>
+            <span class="value game-over-score"></span>
           </div>
           <div>
             <button id="GOstartbtn">
-              <img src="./images/playAgain.png" >
+              <img src="./img/playAgain.png" >
             </button>      
           </div>
           <div id="coinPile"> 
-          <img src="./images/coinPile.png">
+          <img src="./img/coinPile.png">
           </div>
           <div id="snake"> 
-          <img src="./images/enemy.png">
+          <img src="./img/enemy.png">
         </div>
       </main>
       `)

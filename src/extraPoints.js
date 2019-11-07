@@ -12,7 +12,7 @@ function extraPoint(canvas, x, speed) {
 
 extraPoint.prototype.draw = function() {
     var img3= new Image();
-    img3.src="../Images/goldcoin.png"
+    img3.src="../img/goldcoin.png"
   this.ctx.drawImage(img3, this.x, this.y, this.size, this.size);
 
 

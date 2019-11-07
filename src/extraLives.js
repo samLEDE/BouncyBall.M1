@@ -13,7 +13,7 @@ function extraLife(canvas, x, speed) {
 
 extraLife.prototype.draw = function() {
     var img1= new Image();
-    img1.src="../Images/extraLive.png"
+    img1.src="../img/extraLive.png"
   this.ctx.drawImage(img1, this.x, this.y, this.size, this.size);
   
 //   fillStyle = '#000000';

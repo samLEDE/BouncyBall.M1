@@ -12,7 +12,7 @@ function element(canvas, x, speed) {
 
 element.prototype.draw = function() {
     var img2= new Image();
-    img2.src="../Images/enemy.png"
+    img2.src="../img/enemy.png"
   this.ctx.drawImage(img2, this.x, this.y, this.size, this.size);
 
 //   this.ctx.fillStyle = '#FF6F27';

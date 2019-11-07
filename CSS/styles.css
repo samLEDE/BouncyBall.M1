@@ -160,11 +160,14 @@ html, body {
   }
 
 .moneybackground {
-  background-image: url(../images/1.jpg);
+  background-image: url(../img/1.jpg);
   background-size: cover;
 }
 
-
+main .value.game-over-score {
+  color: black;
+  font-size: 70px;
+}
 
 
 
