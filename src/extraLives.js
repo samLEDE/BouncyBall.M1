@@ -11,7 +11,7 @@ function extraLife(canvas, x, speed) {
 }
 
 
-extraLife.prototype.draw = function() {
+ExtraLife.prototype.draw = function() {
     var img1= new Image();
     img1.src="../img/extraLive.png"
   this.ctx.drawImage(img1, this.x, this.y, this.size, this.size);
@@ -21,11 +21,11 @@ extraLife.prototype.draw = function() {
 //   this.ctx.fillRect(this.x, this.y, this.size, this.size);
 };
 
-extraLife.prototype.updatePosition = function() {
+ExtraLife.prototype.updatePosition = function() {
   this.y = this.y + this.speed;
 };
 
-extraLife.prototype.isInsideScreen = function() {
+ExtraLife.prototype.isInsideScreen = function() {
   // if x plus half of its size is smaller then 0 return
   return this.y + this.size / 2 > 0;
 };

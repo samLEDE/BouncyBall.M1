@@ -72,21 +72,21 @@ Game.prototype.startLoop = function() {
     //create new enemies 
     if (Math.random() > 0.98) {
       var randomX = (this.canvas.width - 20)  * Math.random();
-      var newEnemy = new element(this.canvas, randomX, 5);
+      var newEnemy = new Element(this.canvas, randomX, 5);
       this.enemies.push(newEnemy);
     }
     
     //create new lives
     if (Math.random() > 0.999) {
       var randomX = (this.canvas.width - 20)  * Math.random();
-      var newLife = new extraLife(this.canvas, randomX, 5);
+      var newLife = new ExtraLife(this.canvas, randomX, 5);
       this.bonusLives.push(newLife);
     }
 
                   //create new points --> done 
                   if (Math.random() > 0.95) {
                     var randomX = (this.canvas.width - 20)  * Math.random();
-                    var newPoint = new extraPoint(this.canvas, randomX, 5);
+                    var newPoint = new ExtraPoint(this.canvas, randomX, 5);
                     this.bonusPoint.push(newPoint);
                   }
 

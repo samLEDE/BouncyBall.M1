@@ -10,7 +10,7 @@ function element(canvas, x, speed) {
   this.speed = speed;
 }
 
-element.prototype.draw = function() {
+Element.prototype.draw = function() {
     var img2= new Image();
     img2.src="../img/enemy.png"
   this.ctx.drawImage(img2, this.x, this.y, this.size, this.size);
@@ -20,11 +20,11 @@ element.prototype.draw = function() {
 //   this.ctx.fillRect(this.x, this.y, this.size, this.size);
 };
 
-element.prototype.updatePosition = function() {
+Element.prototype.updatePosition = function() {
   this.y = this.y + this.speed;
 };
 
-element.prototype.isInsideScreen = function() {
+Element.prototype.isInsideScreen = function() {
   // if x plus half of its size is smaller then 0 return
   return this.y + this.size / 2 > 0;
 };

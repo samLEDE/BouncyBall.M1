@@ -10,7 +10,7 @@ function extraPoint(canvas, x, speed) {
   this.speed = speed;
 }
 
-extraPoint.prototype.draw = function() {
+ExtraPoint.prototype.draw = function() {
     var img3= new Image();
     img3.src="../img/goldcoin.png"
   this.ctx.drawImage(img3, this.x, this.y, this.size, this.size);
@@ -23,11 +23,11 @@ extraPoint.prototype.draw = function() {
 
 
 
-extraPoint.prototype.updatePosition = function() {
+ExtraPoint.prototype.updatePosition = function() {
   this.y = this.y + this.speed;
 };
 
-extraPoint.prototype.isInsideScreen = function() {
+ExtraPoint.prototype.isInsideScreen = function() {
   // if x plus half of its size is smaller then 0 return
   return this.y + this.size / 2 > 0;
 };

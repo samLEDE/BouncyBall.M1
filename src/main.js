@@ -10,6 +10,9 @@ function buildDom(htmlString) {
     var splashScreen;
     var game;
     var gameOverScreen;
+    var loseLife = document.getElementById('coindSound')
+    //var splashSound = docu
+    var spashSounds
     var playerScore;
     
   
@@ -30,6 +33,8 @@ function buildDom(htmlString) {
       `);
       // <img src="./img/instructions.png> use this for instructions 
   
+      //spashSounds.play()
+
       document.body.appendChild(splashScreen);
 
       document.body.classList.add('moneybackground')
@@ -99,6 +104,8 @@ function buildDom(htmlString) {
       `)
       document.body.appendChild(gameOverScreen);
       document.body.classList.add('gameOverScreen');
+
+      //spashSounds.play()
 
       let span = document.body.querySelector('.value');
       span.innerText = game.score;

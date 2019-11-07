@@ -47,8 +47,6 @@ Player.prototype.didCollide = function(element) {
   var playerTop = this.y;
   var playerBottom = this.y + this.height;
 
-
-
   //the size of the enemy depends on its X/Y position + its size
   var elementLeft = element.x;
   var elementRight = element.x + element.size;
@@ -62,7 +60,11 @@ Player.prototype.didCollide = function(element) {
   var crossBottomElement = elementTop <= playerBottom && elementTop >= playerTop;
 
   if ((crossRightElement || crossLeftElement) && (crossBottomElement || crossTopElement)) {
-    console.log("remove the element!!!!!")
+    
+    coinSound.pause()
+    coinSound.currentTime = 0;
+    coinSound.play()  
+
     return true;
   } 
 return false;
@@ -79,12 +81,6 @@ Player.prototype.addLife = function() {
   this.lives += 1;
 };
 
- // add point to player
-// Player.prototype.addPoint = function() {
-//   this.score += 1;
-//   return this.score;
-// };
-  
 
   Player.prototype.draw = function() {
     this.ctx.fillStyle = '#66D3FA';
@@ -94,7 +90,6 @@ Player.prototype.addLife = function() {
       this.y,
       this.width,
       this.height,
-      
 
     );
   };
