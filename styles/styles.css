@@ -166,7 +166,11 @@ html, body {
 
 main .value.game-over-score {
   color: black;
-  font-size: 70px;
+  font-family: '8BITWONDERNominal';
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 60px;
+  margin-left: 20px;
 }
 
 

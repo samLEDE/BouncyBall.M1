@@ -81,7 +81,7 @@ function buildDom(htmlString) {
             <img src="./img/gameOver.png" id ="GOimage">  
           </div>
           <div class="score">
-            <span class="label"> <img id="GOscore"src="./img/GOScore.png"></span>
+            <span class="label"><img id="GOscore"src="./img/GOScore.png"></span>
             <span class="value game-over-score"></span>
           </div>
           <div>
