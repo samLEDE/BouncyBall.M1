@@ -11,6 +11,9 @@ function Player(canvas, lives) {
     // this.score = score;
     this.x = canvas.width / 2;
     this.y = 550;
+
+
+
   }
 
 
@@ -61,9 +64,22 @@ Player.prototype.didCollide = function(element) {
 
   if ((crossRightElement || crossLeftElement) && (crossBottomElement || crossTopElement)) {
     
+
     coinSound.pause()
     coinSound.currentTime = 0;
     coinSound.play()  
+
+    // if(element.type = "coin") {
+
+    //   coinSound.pause()
+    //   coinSound.currentTime = 0;
+    //   coinSound.play()  
+    // }
+    // else if(element.type = "enemy") {
+    //   loseLife.pause()
+    //   loseLife.currentTime = 0;
+    //   loseLife.play()
+    // }
 
     return true;
   } 

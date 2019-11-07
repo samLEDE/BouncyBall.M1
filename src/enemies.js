@@ -1,6 +1,6 @@
 'use strict';
 
-function element(canvas, x, speed) {
+function Element(canvas, x, speed, image) {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
   this.size = 50;
@@ -8,12 +8,12 @@ function element(canvas, x, speed) {
   this.x = x
   this.y = 0;
   this.speed = speed;
+  this.image = image;
 }
 
 Element.prototype.draw = function() {
-    var img2= new Image();
-    img2.src="../img/enemy.png"
-  this.ctx.drawImage(img2, this.x, this.y, this.size, this.size);
+ 
+  this.ctx.drawImage(this.image, this.x, this.y, this.size, this.size);
 
 //   this.ctx.fillStyle = '#FF6F27';
 //   // fillRect(x, y, width, height)

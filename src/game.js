@@ -13,6 +13,15 @@ function Game() {
   this.startLives = 3;
   // this.startScore = 0;
   this.score = 0;
+
+  this.extraLifeimage= new Image();
+  this.extraLifeimage.src="./img/extraLive.png" 
+
+  this.enemyImage= new Image();
+  this.enemyImage.src="./img/enemy.png"
+
+  this.coinImage= new Image();
+  this.coinImage.src="./img/goldcoin.png"
 }
 
 Game.prototype.start = function() {
@@ -72,21 +81,21 @@ Game.prototype.startLoop = function() {
     //create new enemies 
     if (Math.random() > 0.98) {
       var randomX = (this.canvas.width - 20)  * Math.random();
-      var newEnemy = new Element(this.canvas, randomX, 5);
+      var newEnemy = new Element(this.canvas, randomX, 5, this.enemyImage);
       this.enemies.push(newEnemy);
     }
     
     //create new lives
     if (Math.random() > 0.999) {
       var randomX = (this.canvas.width - 20)  * Math.random();
-      var newLife = new ExtraLife(this.canvas, randomX, 5);
+      var newLife = new ExtraLife(this.canvas, randomX, 5, this.extraLifeimage);
       this.bonusLives.push(newLife);
     }
 
                   //create new points --> done 
-                  if (Math.random() > 0.95) {
+                  if (Math.random() > 0.8) {
                     var randomX = (this.canvas.width - 20)  * Math.random();
-                    var newPoint = new ExtraPoint(this.canvas, randomX, 5);
+                    var newPoint = new ExtraPoint(this.canvas, randomX, 5, this.coinImage);
                     this.bonusPoint.push(newPoint);
                   }
 

@@ -1,6 +1,6 @@
 'use strict';
 
-function extraPoint(canvas, x, speed) {
+function ExtraPoint(canvas, x, speed, image) {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
   this.size = 30;
@@ -8,12 +8,11 @@ function extraPoint(canvas, x, speed) {
   this.x = x
   this.y = 0;
   this.speed = speed;
+  this.image = image;
 }
 
 ExtraPoint.prototype.draw = function() {
-    var img3= new Image();
-    img3.src="../img/goldcoin.png"
-  this.ctx.drawImage(img3, this.x, this.y, this.size, this.size);
+  this.ctx.drawImage(this.image, this.x, this.y, this.size, this.size);
 
 
 //   this.ctx.fillStyle = '#ff1a1a';

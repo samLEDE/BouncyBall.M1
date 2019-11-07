@@ -1,6 +1,6 @@
 'use strict';
 
-function extraLife(canvas, x, speed) {
+function ExtraLife(canvas, x, speed, image) {
   this.canvas = canvas;
   this.ctx = canvas.getContext('2d');
   this.size = 30;
@@ -8,13 +8,13 @@ function extraLife(canvas, x, speed) {
   this.x = x
   this.y = 0;
   this.speed = speed;
+  this.img1= image;
 }
 
 
 ExtraLife.prototype.draw = function() {
-    var img1= new Image();
-    img1.src="../img/extraLive.png"
-  this.ctx.drawImage(img1, this.x, this.y, this.size, this.size);
+  
+  this.ctx.drawImage(this.img1, this.x, this.y, this.size, this.size);
   
 //   fillStyle = '#000000';
 //   // fillRect(x, y, width, height)
