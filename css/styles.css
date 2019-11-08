@@ -127,8 +127,6 @@ html, body {
     height: 100%;
   }
 
- 
-
   #GOimage {
     padding-top: 50px;
   }
@@ -173,6 +171,26 @@ main .value.game-over-score {
   font-size: 60px;
   margin-left: 20px;
 }
+
+main .value.game-score {
+  color: white;
+  font-family: '8BITWONDERNominal';
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+main .label.game-score {
+  color: white;
+  font-family: '8BITWONDERNominal';
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+
 
 
 

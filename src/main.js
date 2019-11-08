@@ -54,12 +54,12 @@ function buildDom(htmlString) {
         <main class="game">
         <div class="div-container">
         <div class="lives">
-        <span class="label">Lives:</span>
-        <span class="value"></span>
+        <span class="label game-score">Lives:</span>
+        <span class="value game-score"></span>
       </div>
       <div class="score">
-        <span class="label">Score:</span>
-        <span class="value"></span>
+      <span class="label game-score">score:</span>
+      <span class="value game-score"></span>
       </div>
 
     </header>
