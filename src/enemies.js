@@ -12,12 +12,9 @@ function Element(canvas, x, speed, image) {
 }
 
 Element.prototype.draw = function() {
- 
   this.ctx.drawImage(this.image, this.x, this.y, this.size, this.size);
 
-//   this.ctx.fillStyle = '#FF6F27';
-//   // fillRect(x, y, width, height)
-//   this.ctx.fillRect(this.x, this.y, this.size, this.size);
+
 };
 
 Element.prototype.updatePosition = function() {

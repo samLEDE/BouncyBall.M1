@@ -11,6 +11,7 @@ function ExtraPoint(canvas, x, speed, image) {
   this.image = image;
 }
 
+
 ExtraPoint.prototype.draw = function() {
   this.ctx.drawImage(this.image, this.x, this.y, this.size, this.size);
 

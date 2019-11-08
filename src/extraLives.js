@@ -8,13 +8,13 @@ function ExtraLife(canvas, x, speed, image) {
   this.x = x
   this.y = 0;
   this.speed = speed;
-  this.img1= image;
+  this.image= image;
 }
 
 
 ExtraLife.prototype.draw = function() {
   
-  this.ctx.drawImage(this.img1, this.x, this.y, this.size, this.size);
+  this.ctx.drawImage(this.image, this.x, this.y, this.size, this.size);
   
 //   fillStyle = '#000000';
 //   // fillRect(x, y, width, height)

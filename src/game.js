@@ -86,14 +86,14 @@ Game.prototype.startLoop = function() {
     }
     
     //create new lives
-    if (Math.random() > 0.999) {
+    if (Math.random() > 0.997) {
       var randomX = (this.canvas.width - 20)  * Math.random();
       var newLife = new ExtraLife(this.canvas, randomX, 5, this.extraLifeimage);
       this.bonusLives.push(newLife);
     }
 
                   //create new points --> done 
-                  if (Math.random() > 0.8) {
+                  if (Math.random() > 0.95) {
                     var randomX = (this.canvas.width - 20)  * Math.random();
                     var newPoint = new ExtraPoint(this.canvas, randomX, 5, this.coinImage);
                     this.bonusPoint.push(newPoint);
