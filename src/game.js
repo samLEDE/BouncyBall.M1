@@ -179,7 +179,7 @@ Game.prototype.checkCollisions = function() {
                       //--> done 
       this.bonusPoint.forEach(function(extraPoint) {
         if (this.player.didCollide(extraPoint)) {
-          console.log(this)
+          //console.log(this)
         this.addPoint() 
                       
         this.scoreElement.innerHTML = this.player.score
@@ -194,7 +194,7 @@ Game.prototype.checkCollisions = function() {
 
 Game.prototype.addPoint = function() {
   this.score += 1;
-  console.log(this.score)
+  //console.log(this.score)
   return this.score;
 };
 

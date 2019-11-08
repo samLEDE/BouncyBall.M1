@@ -109,7 +109,7 @@ function buildDom(htmlString) {
 
       let span = document.body.querySelector('.value');
       span.innerText = game.score;
-      console.log(span.innerText)
+      //console.log(span.innerText)
 
       var startButton = gameOverScreen.querySelector('button');
       startButton.addEventListener('click', function() {
